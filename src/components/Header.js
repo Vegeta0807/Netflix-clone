@@ -4,6 +4,8 @@ import {useNavigate} from 'react-router-dom'
 
 const Header = (props) => {
   const navigate = useNavigate();
+  console.log(props)
+
   return (
     <HeaderContainer>
       <div className='logo'>
@@ -12,7 +14,7 @@ const Header = (props) => {
          />
       </div>
     <button onClick={()=> navigate(props.login ? '/login' : '/signup')}>
-      {props.login ? 'Log in' : 'Sign in'}
+      {props.login ? 'Log in' : 'Sign up'}
     </button>
     </HeaderContainer>
   )
@@ -22,7 +24,7 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4rem;
+  padding: 1rem;
   .logo{
     img{
       height: 3rem;
